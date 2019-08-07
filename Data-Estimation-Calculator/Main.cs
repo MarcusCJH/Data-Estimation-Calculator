@@ -15,9 +15,11 @@ namespace Data_Estimation_Calculator
         public Main()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             MaximizeBox = false;
             MinimizeBox = false;
             grpBxCalculation.Hide();
+            
         }
 
         
@@ -36,8 +38,8 @@ namespace Data_Estimation_Calculator
                     double perMin = Convert.ToDouble(tbxPerMin.Text); //Getter for Per Minute
                     double perHr = (estData / perMin) * 60; // Compute Logic for Per Hr
                     double perDay = perHr * 24; // Compute Logic for Per Day
-                    double estDateTime = estData / perHr; // Compute Logic for Estimate of hr completion
-                    var timeSpan = TimeSpan.FromHours(estDateTime);
+                    double estDateTime = estData / perMin; // Compute Logic for Estimate of hr completion
+                    var timeSpan = TimeSpan.FromMinutes(estDateTime);
                     lblPerHr.Text = perHr.ToString(); // Set Label perHr
                     lblPerDay.Text = perDay.ToString();// Set Label perDay
                     lblTimeNow.Text = d1.ToString("MM/dd/yyyy h:mm tt"); // set Label DateTime
