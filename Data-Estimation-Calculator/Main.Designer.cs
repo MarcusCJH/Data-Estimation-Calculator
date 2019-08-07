@@ -154,6 +154,7 @@
             this.tbxEstData.Name = "tbxEstData";
             this.tbxEstData.Size = new System.Drawing.Size(100, 22);
             this.tbxEstData.TabIndex = 3;
+            this.tbxEstData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxEstData_KeyPress);
             // 
             // tbxPerMin
             // 
