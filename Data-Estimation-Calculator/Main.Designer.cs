@@ -84,9 +84,8 @@
             this.lblTimeComplete.AutoSize = true;
             this.lblTimeComplete.Location = new System.Drawing.Point(129, 125);
             this.lblTimeComplete.Name = "lblTimeComplete";
-            this.lblTimeComplete.Size = new System.Drawing.Size(46, 17);
+            this.lblTimeComplete.Size = new System.Drawing.Size(0, 17);
             this.lblTimeComplete.TabIndex = 8;
-            this.lblTimeComplete.Text = "label8";
             // 
             // lblPerDay
             // 
