@@ -15,16 +15,16 @@ namespace Data_Estimation_Calculator
         public Main()
         {
             InitializeComponent();
+            MaximizeBox = false;
+            MinimizeBox = false;
+            grpBxCalculation.Hide();
         }
 
         
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-
-           
-           
-            
+            grpBxCalculation.Show();           
             DateTime d1 = DateTime.Now; //Getter DateTime of first submit click
             int estData = Convert.ToInt32(tbxEstData.Text); // Getter for Estimation data
             double perMin = Convert.ToDouble(tbxPerMin.Text); //Getter for Per Minute
