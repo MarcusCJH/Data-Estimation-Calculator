@@ -16,5 +16,10 @@ namespace Data_Estimation_Calculator
         {
             InitializeComponent();
         }
+
+        private void TimerNow_Tick(object sender, EventArgs e)
+        {
+            lblTimeNow.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }
