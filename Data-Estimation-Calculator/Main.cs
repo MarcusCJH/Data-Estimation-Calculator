@@ -58,7 +58,7 @@ namespace Data_Estimation_Calculator
             
         }
 
-        private void TbxEstData_KeyPress(object sender, KeyPressEventArgs e)
+        private void TestInt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
         (e.KeyChar != '.'))
