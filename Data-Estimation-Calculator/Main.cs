@@ -29,7 +29,7 @@ namespace Data_Estimation_Calculator
             int a;
             int b;
             
-            if ((int.TryParse(tbxEstData.Text, out a) && a <= int.MaxValue) || (int.TryParse(tbxPerMin.Text, out b) && b <= int.MaxValue))
+            if ((int.TryParse(tbxEstData.Text, out a) && a <= int.MaxValue) && (int.TryParse(tbxPerMin.Text, out b) && b <= int.MaxValue))
             {
                 
                     //valid
