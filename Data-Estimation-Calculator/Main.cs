@@ -16,8 +16,8 @@ namespace Data_Estimation_Calculator
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            MaximizeBox = false;
-            MinimizeBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             grpBxCalculation.Hide();
             
         }
@@ -27,10 +27,10 @@ namespace Data_Estimation_Calculator
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
             decimal d;
-            if (decimal.TryParse(tbxEstData.Text, out d) && decimal.TryParse(tbxPerMin.Text, out d)) 
+            
+            if (Decimal.TryParse(tbxEstData.Text, out d) && Decimal.TryParse(tbxPerMin.Text, out d)) 
             {
-                if(d <= int.MaxValue)
-                {
+               
                     //valid
                     grpBxCalculation.Show();
                     DateTime d1 = DateTime.Now; //Getter DateTime of first submit click
@@ -43,14 +43,9 @@ namespace Data_Estimation_Calculator
                     lblPerHr.Text = perHr.ToString(); // Set Label perHr
                     lblPerDay.Text = perDay.ToString();// Set Label perDay
                     lblTimeNow.Text = d1.ToString("MM/dd/yyyy h:mm tt"); // set Label DateTime
-                    lblTimeComplete.Text = d1.AddHours(estDateTime).ToString("MM/dd/yyyy h:mm tt") + " (" + timeSpan.Hours.ToString() + " Hours " + timeSpan.Minutes.ToString() + " Mins)"; //Set Label add Hours
-                }
-                else
-                {
-                    MessageBox.Show("Out of range");
-                    grpBxCalculation.Hide();
-                    return;
-                }
+                    lblTimeComplete.Text = d1.AddMinutes(estDateTime).ToString("MM/dd/yyyy h:mm tt") + " (" + timeSpan.Hours.ToString() + " Hours " + timeSpan.Minutes.ToString() + " Mins)"; //Set Label add Hours
+                
+                
                 
             }
             else
