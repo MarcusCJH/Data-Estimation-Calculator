@@ -26,16 +26,17 @@ namespace Data_Estimation_Calculator
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            decimal d;
+            int a;
+            int b;
             
-            if (Decimal.TryParse(tbxEstData.Text, out d) && Decimal.TryParse(tbxPerMin.Text, out d)) 
+            if ((int.TryParse(tbxEstData.Text, out a) && a <= int.MaxValue) || (int.TryParse(tbxPerMin.Text, out b) && b <= int.MaxValue))
             {
-               
+                
                     //valid
                     grpBxCalculation.Show();
                     DateTime d1 = DateTime.Now; //Getter DateTime of first submit click
                     int estData = Convert.ToInt32(tbxEstData.Text); // Getter for Estimation data
-                    double perMin = Convert.ToDouble(tbxPerMin.Text); //Getter for Per Minute
+                    int perMin = Convert.ToInt32(tbxPerMin.Text); //Getter for Per Minute
                     double perHr = (estData / perMin) * 60; // Compute Logic for Per Hr
                     double perDay = perHr * 24; // Compute Logic for Per Day
                     double estDateTime = estData / perMin; // Compute Logic for Estimate of hr completion
@@ -44,7 +45,7 @@ namespace Data_Estimation_Calculator
                     lblPerDay.Text = perDay.ToString();// Set Label perDay
                     lblTimeNow.Text = d1.ToString("MM/dd/yyyy h:mm tt"); // set Label DateTime
                     lblTimeComplete.Text = d1.AddMinutes(estDateTime).ToString("MM/dd/yyyy h:mm tt") + " (" + timeSpan.Hours.ToString() + " Hours " + timeSpan.Minutes.ToString() + " Mins)"; //Set Label add Hours
-                
+
                 
                 
             }
@@ -52,6 +53,8 @@ namespace Data_Estimation_Calculator
             {
                 //invalid
                 MessageBox.Show("Please enter a valid number");
+                tbxEstData.Clear();
+                tbxPerMin.Clear();
                 grpBxCalculation.Hide();
                 return;
             }
@@ -72,5 +75,7 @@ namespace Data_Estimation_Calculator
                 e.Handled = true;
             }
         }
+
+        
     }
 }
