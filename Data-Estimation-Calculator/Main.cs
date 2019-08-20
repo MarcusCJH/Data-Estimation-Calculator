@@ -37,7 +37,7 @@ namespace Data_Estimation_Calculator
                     DateTime d1 = DateTime.Now; //Getter DateTime of first submit click
                     int estData = Convert.ToInt32(tbxEstData.Text); // Getter for Estimation data
                     int perMin = Convert.ToInt32(tbxPerMin.Text); //Getter for Per Minute
-                    double perHr = (estData / perMin) * 60; // Compute Logic for Per Hr
+                    double perHr = estData * 60; // Compute Logic for Per Hr
                     double perDay = perHr * 24; // Compute Logic for Per Day
                     double estDateTime = estData / perMin; // Compute Logic for Estimate of hr completion
                     var timeSpan = TimeSpan.FromMinutes(estDateTime);
